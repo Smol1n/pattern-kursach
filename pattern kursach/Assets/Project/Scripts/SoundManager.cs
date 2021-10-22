@@ -10,8 +10,6 @@ namespace RayWenderlich.Unity.StatePatternInUnity
         public AudioClip landing;
         public AudioClip diveBuildup;
         public AudioClip hardLanding;
-        //public AudioClip click;
-        //public AudioClip select;
 
         public static SoundManager Instance;
 

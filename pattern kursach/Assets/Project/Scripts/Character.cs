@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace RayWenderlich.Unity.StatePatternInUnity
 {
@@ -26,7 +27,6 @@ namespace RayWenderlich.Unity.StatePatternInUnity
       
         public float NormalColliderHeight => data.normalColliderHeight;
         public float CrouchColliderHeight => data.crouchColliderHeight;
-        //public float DiveForce => data.diveForce;
         public float JumpForce => data.jumpForce;
         public float MovementSpeed => data.movementSpeed;
         public float CrouchSpeed => data.crouchSpeed;
@@ -106,8 +106,11 @@ namespace RayWenderlich.Unity.StatePatternInUnity
         private void Update()
         {
             movementSM.CurrentState.HandleInput();
-
             movementSM.CurrentState.LogicUpdate();
+            if (Input.GetKey("escape"))
+            {
+                SceneManager.LoadScene("Menu");
+            }
         }
 
         private void FixedUpdate()
